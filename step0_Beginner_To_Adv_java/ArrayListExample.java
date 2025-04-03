@@ -36,6 +36,11 @@ public class ArrayListExample { // class name is ArrayListExample
 
 
 
+
+
+
+
+
 // System.out.print("[");  // Opening bracket line 22
 
     // for (int i = 0; i < n; i++) {
