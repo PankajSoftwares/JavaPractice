@@ -1,0 +1,17 @@
+sum of even numbers and odd numbers in a array
+Qns: Related to sum even or odd etc...
+1. sum_even
+2. Sum_odd
+
+Note:..
+1. Don't directly jump to code.
+2. 1st build a institution & Dry Run the code on White board
+3. To Solve:
+step1: Traverse the array Using Loop
+step 2: Check for a number is even or odd
+
+4. Take care of code optimization using (e.g: one for loop instead of two)
+
+5. Keep in mind about index starts from 0, how to Write an array arr[1] & how to access it.
+
+6.
