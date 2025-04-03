@@ -1,0 +1,121 @@
+Array vs. ArrayList in Java
+Both Arrays and ArrayLists are used to store multiple elements, but they have significant differences in functionality, flexibility, and performance.
+
+1. Key Differences
+Feature	Array (int[], String[], etc.)	ArrayList (ArrayList<Integer>, ArrayList<String>)
+Size	Fixed size (declared at creation).	Dynamic size (grows/shrinks automatically).
+Performance	Faster (direct memory allocation).	Slightly slower (resizing and boxing/unboxing overhead).
+Type	Can store primitives (int, char, etc.) and objects.	Only stores objects (Integer, String, etc.).
+Memory Usage	Less memory (stores elements directly).	More memory (extra overhead for resizing).
+Flexibility	Less flexible (must define size upfront).	More flexible (can add/remove elements dynamically).
+Methods Available	No built-in methods (only length property).	Many built-in methods (add(), remove(), contains(), etc.).
+Iteration	Uses for loop or for-each loop.	Supports for, for-each, and Iterator.
+Multi-dimensional Support	Supports multi-dimensional arrays (int[][]).	Does not support multi-dimensional structures directly.
+Autoboxing	No autoboxing required for primitives.	Requires wrapper classes (Integer instead of int).
+2. Example Code: Array vs. ArrayList
+Using an Array
+java
+Copy
+Edit
+import java.util.Arrays;
+
+public class ArrayExample {
+    public static void main(String[] args) {
+        // Array declaration and initialization
+        int[] numbers = new int[5];  // Fixed size
+        numbers[0] = 10;
+        numbers[1] = 20;
+        numbers[2] = 30;
+
+        // Printing elements
+        System.out.println("Array elements: " + Arrays.toString(numbers));
+
+        // Accessing elements
+        System.out.println("Element at index 1: " + numbers[1]);
+
+        // Iterating through an array
+        System.out.print("Iterating using for loop: ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println();
+
+        // Iterating using for-each loop
+        System.out.print("Using for-each loop: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+    }
+}
+Output:
+
+pgsql
+Copy
+Edit
+Array elements: [10, 20, 30, 0, 0]
+Element at index 1: 20
+Iterating using for loop: 10 20 30 0 0 
+Using for-each loop: 10 20 30 0 0 
+Notice that arrays have a fixed size, so the last two elements are 0 (default values).
+
+Using an ArrayList
+java
+Copy
+Edit
+import java.util.ArrayList;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        // ArrayList declaration and initialization
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        // Adding elements dynamically
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+
+        // Printing elements
+        System.out.println("ArrayList elements: " + numbers);
+
+        // Accessing elements
+        System.out.println("Element at index 1: " + numbers.get(1));
+
+        // Removing an element
+        numbers.remove(1);  // Removes element at index 1 (20)
+
+        // Iterating using for-each loop
+        System.out.print("Using for-each loop: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+
+        // Checking if a number exists
+        System.out.println("\nContains 30? " + numbers.contains(30));
+
+        // Getting size
+        System.out.println("Size of ArrayList: " + numbers.size());
+    }
+}
+Output:
+
+yaml
+Copy
+Edit
+ArrayList elements: [10, 20, 30]
+Element at index 1: 20
+Using for-each loop: 10 30 
+Contains 30? true
+Size of ArrayList: 2
+Notice that ArrayList dynamically resizes when elements are added or removed.
+
+3. When to Use What?
+Scenario	Use Array	Use ArrayList
+Fixed number of elements	✅ Yes	❌ No
+Dynamic size (grows/shrinks)	❌ No	✅ Yes
+Performance-critical applications	✅ Yes (faster)	❌ No (overhead)
+Need built-in methods (add, remove, sort)	❌ No	✅ Yes
+Need to store primitive types (int, char, etc.)	✅ Yes	❌ No (requires Integer, Double, etc.)
+4. Summary
+Use an array when you know the exact number of elements in advance and need better performance.
+
+Use an ArrayList when you need a resizable structure and convenient built-in methods.

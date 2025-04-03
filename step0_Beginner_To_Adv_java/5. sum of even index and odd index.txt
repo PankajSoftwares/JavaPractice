@@ -1,0 +1,1 @@
+5. sum of even index and odd index in an array
