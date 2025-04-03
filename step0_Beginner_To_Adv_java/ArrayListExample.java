@@ -5,19 +5,22 @@ public class ArrayListExample { // class name is ArrayListExample
 
     ArrayList<String> list = new ArrayList<>(); // creating an arraylist of strings
     Scanner sc = new Scanner(System.in);  // creating a scanner object to take input from the user
-    System.out.println("Enter the size of the arraylist: "); // taking the size of the arraylist from the user
+    System.out.println("Enter the size of the arraylist: "); // printing the message to the user for the size entry
     int n=sc.nextInt();    // taking the size of the arraylist from the user
-    System.out.println("Enter the elements of the arraylist: "); // taking the elements of the arraylist from the user
+    System.out.println("Enter the elements of the arraylist: "); // printing the message to the user for the elements entry
 
     for(int i=0;i<n;i++){   // for loop to take input from the user
         String s=sc.next(); // taking the string input from the user
         list.add(s);        // adding the string to the arraylist
     }
     System.out.println();       // printing the elements of the arraylist in a new line
-    System.out.print(String.format("List of %d Elements: ", n)); // Using String.format() to tell the number of elements in the arraylist
-    for(int i=0;i<n;i++){    //for loop to print the elements of the arraylist
-        System.out.print(list.get(i)+" ");  // printing the elements of the arraylist
-    }
+    //System.out.print(String.format("List of %d Elements: ", n)); // Using String.format() to tell the number of elements in the arraylist
+    // for(int i=0;i<n;i++){    //for loop to print the elements of the arraylist
+    //     System.out.print(list.get(i)+" ");  // printing the elements of the arraylist
+    // }
+
+    System.out.println("List of "+n+" Elements: " + list); // printing the elements of the arraylist using the toString() method
+
     
     System.out.println();       // printing the elements of the arraylist in a new line
 }
